@@ -10,12 +10,12 @@ $appSid = getenv('TWILIO_APP_SID');
 $requestFunction = $_REQUEST['requestFunction'];
 	$numberPhone = $_REQUEST['numberPhone'];
 
-function ValidateNumber(){
-//   $client = new Services_Twilio($accountSid, $authToken);
-//	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
-//	'FriendlyName' => "mathiu"));
+function ValidateNumber($numberPhone,$accountSid,$authToken){
+	$client = new Services_Twilio($accountSid, $authToken);
+	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
+	'FriendlyName' => "mathiu"));
 
-	echo json_encode(array($numberPhone=>$numberPhone, 'numberPhone'=>'12357'));
+	echo json_encode(array($numberPhone=>$numberPhone, 'numberPhone'=>$response));
 }
 
 function getNumberValidated(){	
@@ -49,5 +49,5 @@ if($requestFunction == 'requestValid'){
 } else if($requestFunction == 'requestListRecord'){
 	getListRecord();
 }
-	ValidateNumber();
+	ValidateNumber($numberPhone,$accountSid,$authToken);
 ?>
