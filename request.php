@@ -13,9 +13,9 @@ $numberPhone = $_POST['numberPhone']?:'';
 
 
 function ValidateNumber(){
-   $client = new Services_Twilio($accountSid, $authToken);
-	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
-	'FriendlyName' => "mathiu"));
+//   $client = new Services_Twilio($accountSid, $authToken);
+//	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
+//	'FriendlyName' => "mathiu"));
 
 	echo json_encode(array('numberPhone'=>$numberPhone, 'code'=>'12357'));
 }
