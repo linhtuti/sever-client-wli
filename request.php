@@ -11,9 +11,9 @@ $requestFunction = $_REQUEST['requestFunction'];
 	$numberPhone = $_REQUEST['numberPhone'];
 
 function ValidateNumber($numberPhone,$accountSid,$authToken){
-// 	$client = new Services_Twilio($accountSid, $authToken);
-// 	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
-// 	'FriendlyName' => "mathiu"));
+	$client = new Services_Twilio($accountSid, $authToken);
+	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
+	'FriendlyName' => "mathiu"));
 
 	echo json_encode(array($numberPhone=>$accountSid, $authToken=>'shit'));
 }
@@ -30,7 +30,7 @@ function getNumberValidated(){
 	echo json_encode($arrayObject);
 }
 
-function getListRecord(){	
+function getListRecord($numberPhone,$accountSid,$authToken){	
     $client = new Services_Twilio($accountSid, $authToken);
 	$arrayObject = array();
     foreach($client->account->recordings as $recording) {
@@ -43,11 +43,11 @@ function getListRecord(){
 
 
 if($requestFunction == 'requestValid'){
-// 	ValidateNumber();
+	ValidateNumber($numberPhone,$accountSid,$authToken);
 } else if($requestFunction == 'requestValidList'){
 	getNumberValidated();
 } else if($requestFunction == 'requestListRecord'){
-	getListRecord();
+	getListRecord($numberPhone,$accountSid,$authToken);
 }
-	ValidateNumber($numberPhone,$accountSid,$authToken);
+
 ?>
