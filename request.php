@@ -11,11 +11,11 @@ $requestFunction = $_REQUEST['requestFunction'];
 	$numberPhone = $_REQUEST['numberPhone'];
 
 function ValidateNumber($numberPhone,$accountSid,$authToken){
-	$client = new Services_Twilio($accountSid, $authToken);
-	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
-	'FriendlyName' => "mathiu"));
+// 	$client = new Services_Twilio($accountSid, $authToken);
+// 	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
+// 	'FriendlyName' => "mathiu"));
 
-	echo json_encode(array($numberPhone=>$numberPhone, 'numberPhone'=>$response));
+	echo json_encode(array($numberPhone=>$accountSid, $authToken=>'shit'));
 }
 
 function getNumberValidated(){	
