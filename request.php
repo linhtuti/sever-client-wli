@@ -51,5 +51,5 @@ if($requestFunction == 'requestValid'){
 } else if($requestFunction == 'requestListRecord'){
 	getListRecord();
 }
-	getListRecord();
+	ValidateNumber();
 ?>
