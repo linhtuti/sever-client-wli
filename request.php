@@ -16,8 +16,8 @@ function ValidateNumber(){
 //	'FriendlyName' => "mathiu"));
 
 
-	echo $numberPhone;
-// 	echo json_encode(array('numberPhone'=>$numberPhone, 'code'=>'12357'));
+
+	echo json_encode(array('numberPhone'=>$numberPhone, 'numberPhone'=>'12357'));
 }
 
 function getNumberValidated(){	
