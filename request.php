@@ -1,6 +1,6 @@
 <?php
 require 'vendor/autoload.php';
-header('Content-Type: text/xml');
+header('Content-type: application/json');
 $accountSid = getenv('TWILIO_ACCOUNT_SID');
 $authToken = getenv('TWILIO_AUTH_TOKEN');
 
@@ -32,14 +32,24 @@ function getNumberValidated(){
 	echo json_encode($arrayObject);
 }
 
+function getListRecord(){	
+    $client = new Services_Twilio($accountSid, $authToken);
+	$arrayObject = array();
+    foreach($client->account->recordings as $recording) {
+        $arrayObject[] = $recording->uri;
+    }
+
+	echo json_encode($arrayObject);
+}
 
 
 
 if($requestFunction == 'requestValid'){
 	ValidateNumber();
 
-} else if($requestFunction = 'requestValidList'){
+} else if($requestFunction == 'requestValidList'){
 	getNumberValidated();
-
+} else if($requestFunction == 'requestListRecord'){
+	getListRecord();
 }
 ?>
