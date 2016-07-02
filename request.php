@@ -7,17 +7,15 @@ $authToken = getenv('TWILIO_AUTH_TOKEN');
 $appSid = getenv('TWILIO_APP_SID');
 
 
-$requestFunction = $_POST['requestFunction'];
-	$numberPhone = $_POST['numberPhone'];
+$requestFunction = $_REQUEST['requestFunction'];
+	$numberPhone = $_REQUEST['numberPhone'];
 
 function ValidateNumber(){
 //   $client = new Services_Twilio($accountSid, $authToken);
 //	$response = $client->account->outgoing_caller_ids->create($numberPhone, array(   
 //	'FriendlyName' => "mathiu"));
 
-
-
-	echo json_encode(array($numberPhone=>'sdsdsdsdsd', 'numberPhone'=>'12357'));
+	echo json_encode(array($numberPhone=>$numberPhone, 'numberPhone'=>'12357'));
 }
 
 function getNumberValidated(){	
