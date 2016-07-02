@@ -17,7 +17,7 @@ function ValidateNumber(){
 
 
 
-	echo json_encode(array('numberPhone'=>$numberPhone, 'numberPhone'=>'12357'));
+	echo json_encode(array($numberPhone=>'sdsdsdsdsd', 'numberPhone'=>'12357'));
 }
 
 function getNumberValidated(){	
