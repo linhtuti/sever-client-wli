@@ -16,8 +16,8 @@ function ValidateNumber(){
 //	'FriendlyName' => "mathiu"));
 
 
-
-	echo json_encode(array('numberPhone'=>$numberPhone, 'code'=>'12357'));
+	echo $numberPhone;
+// 	echo json_encode(array('numberPhone'=>$numberPhone, 'code'=>'12357'));
 }
 
 function getNumberValidated(){	
@@ -45,7 +45,7 @@ function getListRecord(){
 
 
 if($requestFunction == 'requestValid'){
-	ValidateNumber();
+// 	ValidateNumber();
 } else if($requestFunction == 'requestValidList'){
 	getNumberValidated();
 } else if($requestFunction == 'requestListRecord'){
