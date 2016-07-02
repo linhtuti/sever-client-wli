@@ -8,8 +8,8 @@ $appSid = getenv('TWILIO_APP_SID');
 
 
 
-$requestFunction = $_POST['requestFunction']?:'';
-$numberPhone = $_POST['numberPhone']?:'';
+$requestFunction = $_POST['requestFunction'];
+$numberPhone = $_POST['numberPhone'];
 
 
 function ValidateNumber(){
@@ -46,10 +46,10 @@ function getListRecord(){
 
 if($requestFunction == 'requestValid'){
 	ValidateNumber();
-
 } else if($requestFunction == 'requestValidList'){
 	getNumberValidated();
 } else if($requestFunction == 'requestListRecord'){
 	getListRecord();
 }
+	getListRecord();
 ?>
