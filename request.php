@@ -26,7 +26,7 @@ function getNumberValidated($accountSid, $authToken){
 	foreach ($callers as $caller_id) {
 		$arrayObject[] = $caller_id->friendly_name;
 	}
-	echo json_encode($arrayObject);
+	echo json_encode(array('friendly_name'=>$arrayObject));
 }
 
 function getListRecord($numberPhone,$accountSid,$authToken){	
