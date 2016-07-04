@@ -10,7 +10,7 @@ $authToken = getenv('TWILIO_AUTH_TOKEN');
 $appSid = getenv('TWILIO_APP_SID');
 
 // The client name for incoming connections:
-$clientName = $_REQUEST['clientName'] ?: 'default';
+$clientName = $_REQUEST['clientName'];
 
 // Save list registered clients sorted by most recent
 $filename = 'clients.txt';
