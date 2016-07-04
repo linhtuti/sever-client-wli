@@ -47,6 +47,8 @@ if($requestFunction == 'requestValid'){
 	getNumberValidated($accountSid, $authToken);
 } else if($requestFunction == 'requestListRecord'){
 	getListRecord($numberPhone,$accountSid,$authToken);
+} else {
+	echo json_encode(array('Mathiu', 'Numberphone'));
 }
 
 ?>
